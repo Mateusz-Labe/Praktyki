@@ -6,14 +6,49 @@ font-size: 2rem
 .counter-box button{
     font-size: 1.7rem;
     margin: 0 10px;
-    background-color: white;
+    background-color: rgb(237, 237, 237);
     border: 2px solid black;
     transition: all 0.3s ease;
 }
 
 .counter-box button:hover{
     transform: scale(1.1);
-    background-color: white;
+    border: 2px solid black;
+    cursor: pointer;
+    box-shadow: 0 5px 10px black;
+}
+
+.decres:hover{
+    background-color: rgb(255, 121, 121);
+}
+.reset:hover{
+    background-color: rgb(0, 135, 202);
+}
+.incres:hover{
+    background-color: rgb(169, 255, 167);
+}
+
+.counter2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.counter2 button{
+    font-size: 3rem;
+    padding: 0.8rem 0;
+    min-width: 10%;
+    cursor: pointer;
+    max-width: auto;
+    background-color: rgb(237, 237, 237);
+    border: 2px solid black;
+    transition: all 0.3s ease;
+}
+
+.counter2 button:hover{
+    transform: scale(1.1);
+    background-color: rgb(169, 255, 167);
     border: 2px solid black;
     cursor: pointer;
     box-shadow: 0 5px 10px black;
