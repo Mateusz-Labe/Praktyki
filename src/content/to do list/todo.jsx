@@ -1,22 +1,24 @@
 import React, {useState, useEffect} from 'react'
 import { v4 as uuidv4 } from 'uuid';
-import './TodoList.module.css'
+import './TodoList.css'
 
 const Todo = () => {
 const [tasks, setTasks] = useState(() => {
   const saved = localStorage.getItem("tasks");
   return saved ? JSON.parse(saved) : [];
 });
-  const [newTask, setNewTask] = useState([]);
 
-    useEffect(() => {
-      localStorage.setItem("tasks", tasks);
-    }, [tasks]);
+const [newTask, setNewTask] = useState(""); 
 
-const handleInputChange = (id) => {
+
+useEffect(() => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
+
+const handleInputChange = (event) => {
   setNewTask(event.target.value);
 }
-const addTask = (id) => {
+const addTask = () => {
   if (newTask.trim() === "") return;
     setTasks([...tasks, { id: uuidv4(), text: newTask }]);
     setNewTask("");
@@ -37,19 +39,21 @@ const downTask = (index) => {
   setTasks(newTasks);
 }
   return (
-  <div>
+  <div className='todo__container'>
         <h1>To do list</h1>
 
-      <div>
+      <div className='input'>
         <input type="text" placeholder='Dodaj zadanie...' onChange={handleInputChange} value={newTask} /><button className='add__button' onClick={addTask}>Add task</button>
       </div>
 
       <ul>
-        {tasks.map((task, index) =>
-        <li key={task.id}>{task.text} 
-        <button onClick={() => removeTask(task.id)}>Usuń</button >
-        <button onClick={() => upTask(index)}>Up</button>
-        <button onClick={() => downTask(index)}>Down</button></li>
+          {tasks.map((task, index) =>
+          <li key={task.id}>
+            <span className='task-item'>{task.text}</span>
+          <button className='remove' onClick={() => removeTask(task.id)}>Remove</button>
+          <button className='up' onClick={() => upTask(index)}>Up</button>
+          <button className='down' onClick={() => downTask(index)}>Down</button>
+      </li>
         )}
       </ul>
       

@@ -1,0 +1,124 @@
+.todo__container{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(237, 237, 237);
+    box-shadow: 0 10px 30px rgb(207, 207, 207);
+    border-radius: 8px;
+    width: fit-content;
+    margin: 100px auto;
+    transform: scale(1.2);
+    transition: transform 1s ease, margin 1s ease;
+}
+
+
+.todo__container ul{
+    list-style: none;
+}
+
+.todo__container li{
+    display: flex;
+    align-items: center;
+}
+
+.input input{
+    font-size: 1.5rem;
+}
+
+.input button{
+    margin-left: 10px;
+    font-size: 1.5rem
+}
+
+.todo__container ul li button{
+    list-style: none;
+    padding: 5px 20px;
+    margin: 5px 10px;
+}
+
+.task-item {
+flex: 1;
+}
+
+button{
+    cursor: pointer;
+}
+
+
+@media  screen and (max-width: 1200px) {
+
+    .input input{
+        font-size: 1.2rem;
+    }
+
+    .input button{
+        margin-left: 10px;
+        font-size: 1.2rem
+    }
+
+    .todo__container h1{
+        font-size: 1.6rem
+    }
+
+    .todo__container ul li button{
+        font-size: 0.6rem;
+    }
+
+    .todo__container span{
+        font-size: 0.8rem;
+    }
+}
+
+@media  screen and (max-width: 800px) {
+    
+    .input input{
+        font-size: 1rem;
+    }
+
+    .input button{
+        margin-left: 10px;
+        font-size: 1rem
+    }
+
+    .todo__container h1{
+        font-size: 1.3rem
+    }
+
+    .todo__container ul li button{
+        font-size: 0.4rem;
+    }
+
+    .todo__container span{
+        font-size: 0.6rem;
+    }
+}
+
+@media  screen and (max-width: 650px) {
+
+    .todo__container{
+        padding: 10px;
+    }
+    
+    .input input{
+        font-size: 0.6rem;
+    }
+
+    .input button{
+        margin-left: 10px;
+        font-size: 0.6rem
+    }
+
+    .todo__container h1{
+        font-size: .9rem
+    }
+
+    .todo__container ul li button{
+        padding: 5px 10px;
+        font-size: 0.5rem;
+    }
+
+    .todo__container span{
+        font-size: 0.6rem;
+    }
+}
+
+
