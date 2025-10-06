@@ -12,7 +12,12 @@ const Stoper = () => {
                 setElapsedTime(Date.now() - startTimeRef.current)
             }, 10)
         }
-    }, [isRunning]);
+        else {
+      clearInterval(intervalIdRef.current);
+    }
+
+    return () => clearInterval(intervalIdRef.current);
+  }, [isRunning]);
 
     function start(){
         setIsRunning(true);
